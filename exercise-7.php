@@ -89,6 +89,12 @@
     ";
 
     function printRow(array $estudiantes){
+        $evaluateKey = function(array &$notas, string $key, $value){
+            if($key == "lab1" || $key == "lab2")
+                array_push($notas, $value*0.3);
+            if($key == "parc")
+                array_push($notas, $value*0.4);
+        };
         $count = 1;
         foreach($estudiantes as $estudiantes=>$valores){
             echo "<tr>";
@@ -96,10 +102,7 @@
                 $notas = [];
                 foreach($valores as $clave=>$valor){
                     echo "<td>$valor</td>";
-                    if($clave == "lab1" || $clave == "lab2")
-                        array_push($notas, $valor*0.3);
-                    if($clave == "parc")
-                        array_push($notas, $valor*0.4);
+                    $evaluateKey($notas, $clave, $valor);
                 }
                 foreach($notas as $nota)
                     echo "<td>$nota</td>";
