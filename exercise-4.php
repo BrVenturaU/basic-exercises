@@ -58,13 +58,26 @@
         </thead>
         <tbody>
             <?php 
+                $salario=0.0;
                 foreach($empleados as $indices=>$datosEmpleado){
+                    
                     echo "<tr>";
-                        foreach($datosEmpleado as $clave=>$dato)
-                            echo "<td>$dato</td>";
+                        foreach($datosEmpleado as $clave=>$dato){
+                            echo "<td>$$dato</td>";
+                            $salario += $clave == "salario" ? $dato : 0;
+                        } 
                     echo "</tr>";
                 }
+                $salarioPromedio = round($salario / count($empleados), 2);
             ?>
+            <tr>
+                <td colspan="2">Salario Total</td>
+                <td>$<?=$salario?></td>
+            </tr>
+            <tr>
+                <td colspan="2">Salario Promedio</td>
+                <td>$<?=$salarioPromedio?></td>
+            </tr>
         </tbody>
         <tfoot>
             <tr>
