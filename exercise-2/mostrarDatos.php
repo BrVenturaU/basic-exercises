@@ -53,9 +53,8 @@
                             class="form-control"
                             placeholder="Digite segundo apellido">
                     </div>
-
                     <div class="row g-3">
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <label class="form-label">Edad</label>
                             <input 
                                 type="number" 
@@ -65,7 +64,15 @@
                                 min="0"
                                 required>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
+                        <label class="form-label">Genero</label>
+                            <select class="form-select" name="genero">
+                                <option selected>Selecionar genero</option>
+                                <option value="Femenino">Femenino</option>
+                                <option value="Masculino">Masculino</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
                             <label class="form-label">Codigo</label>
                             <input 
                                 type="text" 
@@ -75,6 +82,17 @@
                                 required>
                         </div>
                         <div class="col-md-3">
+                            <label class="form-label">Lugar de Origen</label>
+                            <input 
+                                type="text" 
+                                name="cuidad-Origen"
+                                class="form-control"
+                                placeholder="Lugar/cuidad de origen"
+                                required>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-md-3">
                             <label class="form-label">Departamento</label>
                             <input 
                                 type="text" 
@@ -83,7 +101,7 @@
                                 placeholder="Departamento de origen"
                                 required>
                         </div>
-                        <div class="col-md-2  mt-4">
+                        <div class="col-md-3  mt-4">
                             <div class="form-check form-switch mt-4">
                                 <input 
                                     class="form-check-input" 
@@ -105,7 +123,6 @@
                                 disabled>
                         </div>
                     </div>
-
                     <div class="row justify-content-center">
                         <div class=" d-grid gap-2 col-4 mx-auto text-center">
                             <button 
@@ -117,15 +134,6 @@
                     </div> 
                 </div>
             </form>
-            <div class="row justify-content-center">
-                <div class=" d-grid gap-2 col-4 mx-auto text-center">
-                    <button 
-                        type="submit" 
-                        name="mostrarDatos"
-                        class="btn btn-primary mb-5 mt-5"> Mostrar informacion
-                    </button>
-                </div>
-            </div> 
 
     <?php
 
@@ -137,41 +145,14 @@
         $lastname_2 = $_POST['apellido_2'] ?? null;
         $age = $_POST['edadEstudiante'] ?? null;
         $code = $_POST['codigoEstudiante'] ?? null;
+        $city = $_POST['cuidad-Origen'] ?? null;
         $departament = $_POST['dep-Origen'] ?? null;
         $checkOption = $_POST['checkExtranjero'] ?? null;
         $country = $_POST['paisExtranjero'] ?? 'El Salvador';
+        $selectGender = $_POST['genero'] ?? null;
 
         $repeticiones=1;
-
-        #PRUEBAS
-
-        // $asoc = array(
-        //     array($name_1, $name_2,$lastname_1, $lastname_2),
-        //     array($name_1, $name_2,$lastname_1, $lastname_2),
-        // );
-
-        // foreach($asoc as $key=>$values){
-        //     echo "<b> $key </b>";
-
-        //     foreach($values as $key2=>$datos){
-        //         echo "<b>". $key2 ."</b>";
-        //         echo $datos . "<br/>";
-        //     }
-        // }
-
-        // $multiArray = array (
-        //     array($name_1, $name_2),
-        //     array($lastname_1, $lastname_2),
-        // );
-
-        // for($i=0; $i<count($multiArray); $i++){
-        //     echo "Fila: ". $i . "<br/>";
-        //     for ($j=0; $j<count($multiArray[$i]); $j++){
-        //         echo $multiArray[$i][$j] . "<br/>";
-        //     }
-        // }
-
-
+      
         // Tabla para mostrar los resultados
         echo '<table class="table  table-striped table-bordered table-hover">';
             echo '<thead>';
@@ -179,31 +160,52 @@
                     echo '<th scope="col">Nombre completo</th>';
                     echo '<th scope="col">Apellido completo</th>';
                     echo '<th scope="col">Edad</th>';
+                    echo '<th scope="col">Genero</th>';
                     echo '<th scope="col">Codigo</th>';
+                    echo '<th scope="col">Lugar de Origen</th>';
                     echo '<th scope="col">Departamento</th>';
                     echo '<th scope="col">Pais Origen</th>';
                 echo '</tr>';
             echo '</thead>';
 
-        //for ($i=0; $i<1; $i++) {
         while ($repeticiones <= 1):
+            //Mostrar campo:Genero - Por el value de la seleccion
+            switch($selectGender) {
+                case 'Femenino':
+                    echo '<tbody>';
+                        echo '<tr>';
+                            echo '<td>'. ucfirst($name_1) . ' ' . ucfirst($name_2) .'</td>';
+                            echo '<td>'. ucfirst($lastname_1) . ' ' . ucfirst($lastname_2) .'</td>';
+                            echo '<td>'. $age .'</td>';
+                            echo '<td>'. $selectGender .'</td>';
+                            echo '<td>'. strtoupper($code) .'</td>';
+                            echo '<td>'. ucfirst($city) .'</td>';
+                            echo '<td>'. ucfirst($departament) .'</td>';
+                            echo '<td>'. ucfirst($country) . '</td>';
+                        echo '</tr>';
+                    echo '</tbody>';
+                break;
+                case 'Masculino':
                 echo '<tbody>';
                     echo '<tr>';
-                    //for ($j=0; $j < 1; $j++) {
                         echo '<td>'. ucfirst($name_1) . ' ' . ucfirst($name_2) .'</td>';
                         echo '<td>'. ucfirst($lastname_1) . ' ' . ucfirst($lastname_2) .'</td>';
                         echo '<td>'. $age .'</td>';
+                        echo '<td>'. ucfirst($selectGender) .'</td>';
                         echo '<td>'. strtoupper($code) .'</td>';
+                        echo '<td>'. ucfirst($city) .'</td>';
                         echo '<td>'. ucfirst($departament) .'</td>';
                         echo '<td>'. ucfirst($country) . '</td>';
-                   // }
                     echo '</tr>';
                 echo '</tbody>';
-        //}
-        $repeticiones++;
-            
+                break;
+                default:
+            };
+                
+        $repeticiones++;   
+
         endwhile;
-    
+
         echo '</table>';  
     }                
     ?>
