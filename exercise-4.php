@@ -63,7 +63,7 @@
                     
                     echo "<tr>";
                         foreach($datosEmpleado as $clave=>$dato){
-                            echo "<td>$$dato</td>";
+                            echo $clave == "salario" ? "<td>$$dato</td>" : "<td>$dato</td>";
                             $salario += $clave == "salario" ? $dato : 0;
                         } 
                     echo "</tr>";
