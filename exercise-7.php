@@ -78,13 +78,14 @@
             <th>N°</th>
             <th>Código</th>
             <th>Nombre</th>
-            <th>lab1</th>
-            <th>lab2</th>
-            <th>parc</th>
-            <th>lab1 (30%)</th>
-            <th>lab2 (30%)</th>
-            <th>parc (40%)</th>
-            <th>prom</th>
+            <th>Laboratorio 1</th>
+            <th>Laboratorio 2</th>
+            <th>Parcial</th>
+            <th>Laboratorio 1 (30%)</th>
+            <th>Laboratorio 2 (30%)</th>
+            <th>Parcial (40%)</th>
+            <th>Promedio</th>
+            <th>Estado</th>
         </tr>
     ";
 
@@ -106,7 +107,10 @@
                 }
                 foreach($notas as $nota)
                     echo "<td>$nota</td>";
-                echo "<td>".array_sum($notas)."</td>";
+                $notaFinal = array_sum($notas);
+                echo "<td>$notaFinal</td>";
+                echo $notaFinal >= 7 ? "<td>Aprobado</td>" : "<td>Debe mejorar</td>";
+                
             echo "</tr>";
             $count++;
         }
