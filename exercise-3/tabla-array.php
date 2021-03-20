@@ -19,7 +19,7 @@
             <h1 class="mb-5 mt-5"><?php print(TITLE); ?></h1>
             <figure class="figure">
                 <label><h5>Se solicita transformar el siguiente array en un tabla:</h5></label><br>
-                <img src="./img/img_tabla-array.png" class="figure-img img-fluid rounded" alt="array">
+                <img src="./imgCodigo-3.png" class="figure-img img-fluid rounded" alt="array">
             </figure><br><br>
             <label><h4>Resultado:</h4></label><br/>
 
