@@ -87,5 +87,17 @@
             </tr>
         </tfoot>
     </table>
+
+    <div>
+        <dl>
+            <?php
+                $empleadosDepartamento = array_count_values(array_column($empleados, "departamento"));
+                foreach($empleadosDepartamento as $departamento=>$total){
+                    echo "<dt>Empleados en: $departamento.</dt>";
+                    echo "<dd>$total</dd>";
+                }
+            ?>
+        </dl>
+    </div>
 </body>
 </html>
