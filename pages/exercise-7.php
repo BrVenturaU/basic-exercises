@@ -137,6 +137,9 @@
     </style>
 </head>
 <body>
+    <?php
+        include("components/nav.php");
+    ?>
     <h1>Tabla de datos</h1>
     <table>
         <thead>

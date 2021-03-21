@@ -47,6 +47,10 @@
     <title>Exercise-4</title>
 </head>
 <body>
+    <?php
+        include("components/nav.php");
+    ?>
+
     <h1>4. Cree un array asociativoen donde almacene los datos mostrados en la siguiente tabla:</h1>
     <table border="1">
         <thead>

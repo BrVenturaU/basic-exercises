@@ -12,6 +12,9 @@
 </head>
 <body>
     <?php
+        include("components/nav.php");
+    ?>
+    <?php
         function numeroMayor(int $numero1, int $numero2):int{
             return $numero1 > $numero2 ? $numero1 : $numero2;
         }
