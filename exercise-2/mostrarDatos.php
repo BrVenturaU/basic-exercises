@@ -61,7 +61,7 @@
                                 name="edadEstudiante"
                                 class="form-control"
                                 placeholder="Digite edad"
-                                min="0"
+                                min="1"
                                 required>
                         </div>
                         <div class="col-md-3">
