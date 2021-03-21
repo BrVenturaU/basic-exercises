@@ -27,11 +27,12 @@
 
 <nav>
     <?php
-        for ($i=1; $i < 8; $i++) { 
+        $fileList = glob('pages/*');
+        foreach($fileList as $index=>$file){
+            $file = str_replace("pages/", "", $file);
             echo "
-                <a href='exercise-$i.php'>Ejercicio $i</a>
+                <a href='$file'>Ejercicio ".($index+1)."</a>
             ";
         }
-    
     ?>
 </nav>
