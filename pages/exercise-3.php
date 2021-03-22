@@ -1,22 +1,12 @@
-<!doctype html>
-<html lang="en">
 <?php
     define ("TITLE", "Mostrar de Array - Tabla");
 ?>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
-    <title>Tabla - Array </title>
-  </head>
-  <body>
   <div class="container">
         <div class="mb-3">
             <h1 class="mb-5 mt-5"><?php print(TITLE); ?></h1>
             <figure class="figure">
                 <label><h5>Se solicita transformar el siguiente array en un tabla:</h5></label><br>
-                <img src="./img_tabla-array.png" class="figure-img img-fluid rounded" alt="array">
+                <img src="../images/img_tabla-array.png" class="figure-img img-fluid rounded" alt="array">
             </figure><br><br>
             <label><h4>Resultado:</h4></label><br/>
     <?php 
@@ -72,7 +62,5 @@
                  
     ?>
     </div>
-  </body>
-</html>
 
 
