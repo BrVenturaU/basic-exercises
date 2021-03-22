@@ -6,7 +6,7 @@
             <h1 class="mb-5 mt-5"><?php print(TITLE); ?></h1>
             <figure class="figure">
                 <label><h5>Se solicita transformar el siguiente array en un tabla:</h5></label><br>
-                <img src="../images/img_tabla-array.png" class="figure-img img-fluid rounded" alt="array">
+                <img src="images/img_tabla-array.png" class="figure-img img-fluid rounded" alt="array">
             </figure><br><br>
             <label><h4>Resultado:</h4></label><br/>
     <?php 
@@ -36,25 +36,13 @@
                 echo '<th scope="col">Correo electronico</th>';
             echo '</tr>';
         echo '</thead>';
-        for ($i=0; $i<=1; $i++){
+        for ($i=0; $i<3; $i++){
             echo '<tbody>';
                 echo '<tr>';
-                    echo '<td>'. $i .'</td>';
-                    echo '<td>'. $datos[0]["Nombre"] .'</td>';
-                    echo '<td>'. $datos[0]["Telefono"] .'</td>';
-                    echo '<td>'. $datos[0]["Correo"] .'</td>';
-                echo '</tr>';
-                echo '<tr>';
-                    echo '<td>'. ++$i .'</td>';
-                    echo '<td>'. $datos[1]["Nombre"] .'</td>';
-                    echo '<td>'. $datos[1]["Telefono"] .'</td>';
-                    echo '<td>'. $datos[1]["Correo"] .'</td>';
-                echo '</tr>';
-                echo '<tr>';
-                    echo '<td>'. $i+$i .'</td>';
-                    echo '<td>'. $datos[2]["Nombre"] .'</td>';
-                    echo '<td>'. $datos[2]["Telefono"] .'</td>';
-                    echo '<td>'. $datos[2]["Correo"] .'</td>';
+                    echo '<td>'. ($i+1) .'</td>';
+                    echo '<td>'. $datos[$i]["Nombre"] .'</td>';
+                    echo '<td>'. $datos[$i]["Telefono"] .'</td>';
+                    echo '<td>'. $datos[$i]["Correo"] .'</td>';
                 echo '</tr>';
             echo '</tbody>';   
         }
