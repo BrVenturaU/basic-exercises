@@ -116,17 +116,28 @@
         }
     }
 ?>
-    <h1>Tabla de datos</h1>
-    <table>
-        <thead>
-            <?= $tableHeaders; ?>
-        </thead>
-        <tbody>
-            <?php
-                printRow($estudiantes);
-            ?>
-        </tbody>
-        <tfoot>
-            <?= $tableHeaders; ?>
-        </tfoot>
-    </table>
+    
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Tabla de datos</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table lead table-dark table-striped table-bordered table-hover ">
+                <thead>
+                    <?= $tableHeaders; ?>
+                </thead>
+                <tbody>
+                    <?php
+                        printRow($estudiantes);
+                    ?>
+                </tbody>
+                <tfoot>
+                    <?= $tableHeaders; ?>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
