@@ -12,7 +12,7 @@
               </button>
             </div>
             
-            <form id="form" action="sumaNCantidad.php" method="POST" class="form-group">
+            <form id="form" action="exercise-5.php" method="POST" class="form-group">
                 <button 
                   type="submit" 
                   name="sumar"

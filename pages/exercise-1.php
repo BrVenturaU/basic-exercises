@@ -1,7 +1,7 @@
 <div class="container">
         <div class="mb-3">
             <h1 class="mb-5 mt-5">Calculadora de Operaciones Basicas</h1>
-            <form action="calculadora.php" method="POST" class="form-group">
+            <form action="exercise-1.php" method="POST" class="form-group">
                 <label class="form-label"><h6>Ingrese los valores que se solicitan:</h6></label>
                 <div class="row">
                     <div class="col-md-6 ">
